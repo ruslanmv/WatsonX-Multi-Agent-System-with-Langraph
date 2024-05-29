@@ -1,6 +1,4 @@
-Here is the comprehensive guide to building advanced conversational agents using Langgraph:
-
-**Building Advanced Conversational Agents Using Langgraph: A Comprehensive Guide**
+# Building Advanced Conversational Agents Using Langgraph: A Comprehensive Guide
 
 **Introduction**
 
