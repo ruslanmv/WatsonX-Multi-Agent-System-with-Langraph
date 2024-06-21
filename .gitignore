@@ -1,3 +1,5 @@
 
 blog/
 .env
+
+/.ipynb_checkpoints
