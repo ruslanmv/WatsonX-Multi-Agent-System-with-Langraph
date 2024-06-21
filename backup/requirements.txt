@@ -1,0 +1,10 @@
+ipykernel
+ipython
+langgraph
+langsmith
+langchain_anthropic
+python-dotenv
+ibm_watsonx_ai
+langchain_ibm
+tavily-python
+langchain_community
