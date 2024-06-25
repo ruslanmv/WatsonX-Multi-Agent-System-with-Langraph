@@ -1,1 +1,1 @@
-.venv\Scripts\activate.bats
+.venv\Scripts\activate.bat

@@ -24,135 +24,90 @@ Langgraph boasts several key features that set it apart from other NLP framework
 * **Fully Integrated Into LangChain Ecosystem**: Langgraph is built on top of the LangChain ecosystem, providing seamless integration with other NLP tools and libraries.
 * **Active Research & Development Project**: Langgraph is an actively maintained project, with a dedicated community contributing to its development and growth.
 
-**Example in Python**
-```python
-import langgraph
 
-# Create a sample graph with two agents and a user
-graph = langgraph.Graph()
-agent1 = langgraph.Agent("Agent 1")
-agent2 = langgraph.Agent("Agent 2")
-user = langgraph.User("User")
 
-graph.add_node(agent1)
-graph.add_node(agent2)
-graph.add_node(user)
+## Local Setup
 
-graph.add_edge(agent1, user, "speaks_to")
-graph.add_edge(agent2, user, "listens_to")
+If we are interested in testing this environment locally.
 
-# Print the graph structure
-print(graph)
+Let's assume you have Python installed.
+
+## Step 1. Python Installation
+First, you need to install Python  `3.11.9` if you haven't already. You can download the latest version from [Python's official website](https://www.python.org/downloads/). 
+
+1. **Check Python Version:**
+   - In the Command Prompt, type the following command to verify that Python is correctly added to the PATH:
+```bash
+python --version
 ```
-**Setting Up Your Environment**
 
-Before diving into the world of Langgraph, let's set up our environment and configure our first graph.
 
-**Installing Dependencies**
+You should see an output similar to:
 
-To get started with Langgraph, you'll need to install the required dependencies. You can do this using pip:
+```bash
+Python 3.10.11
 ```
-pip install langgraph
+if you have another version but you installed it
+just you can type the path where you have installed python e.g.
+```bash
+C:\Python310\python.exe --version
 ```
-**Configuring Your First Graph**
-
-Once you've installed Langgraph, let's create a simple graph with two agents and a user:
-```python
-import langgraph
-
-# Create a sample graph with two agents and a user
-graph = langgraph.Graph()
-agent1 = langgraph.Agent("Agent 1")
-agent2 = langgraph.Agent("Agent 2")
-user = langgraph.User("User")
-
-graph.add_node(agent1)
-graph.add_node(agent2)
-graph.add_node(user)
-
-graph.add_edge(agent1, user, "speaks_to")
-graph.add_edge(agent2, user, "listens_to")
-
-# Print the graph structure
-print(graph)
+and should be work
+```bash
+Python 3.10.11
 ```
-This code creates a simple graph with two agents and a user, where Agent 1 speaks to the user, and Agent 2 listens to the user.
 
-**Creating Your Own Custom Agents**
 
-Now that we have our environment set up, let's create our own custom agents using Langgraph.
+### Step 2: Create and Activate Virtual Environment
 
-**Design Principles**
+The environment we will consider is Python 3.10 We will create a virtual environment called `.venv`, but you can name it whatever you like.
 
-When designing custom agents, it's essential to consider the following principles:
+In your terminal, navigate to the directory where you want to create your project and run:
 
-* **Modularity**: Break down complex agent behaviors into smaller, reusable modules.
-* **Reusability**: Design agents that can be easily reused across different applications.
-* **Flexibility**: Create agents that can adapt to changing environments and user inputs.
-
-**Implementation Techniques**
-
-Langgraph provides several implementation techniques to create custom agents:
-
-* **Leveraginebuilt Tools**: Utilize Langgraph's prebuilt tools and libraries to speed up development.
-* **Extending Core Functionality**: Extend Langgraph's core functionality to create custom agents that meet specifin requirements.
-
-**Example in Python**
-```python
-import langgraph
-# Create a custom agent that greets users
-class GreetingAgent(langgraph.Agent):
-    def __init__(self, name):
-        super().__init__(name)
-
-    def respond(self, user_input):
-        return f"Hello, {user_input}!"
-
-# Create an instance of the custom agent
-greeting_agent = GreetingAgent("Greeting Agent")
-
-# Test the custom agent
-print(greeting_agent.respond("John"))  # Output: Hello, John!
+```bash
+python -m venv .venv
 ```
-**Optimizing Performance Through Best Practices**
 
-To ensure optimal performance when building advanced conversational agents, follow these best practices:
+Then, activate the virtual environment:
 
-**Code Organization & Modularization**
+- **On Windows:**
 
-Organize your code into modular components, making it easier to maintain and update.
-
-**Utilizing Parallelism**
-
-Leverage parallel processing to speed up computationally intensive tasks, such as graph construction and agent modeling.
-
-**Memory Management Strategies**
-
-Implement efficient memory management strategies to reduce memory usage and prevent memory leaks.
-
-**Example in Python**
-```python
-import langgraph
-import concurrent.futures
-
-# Create a sample graph with multiple agents
-graph = langgraph.Graph()
-agents = [langgraph.Agent(f"Agent {i}") for i in range(10)]
-
-# Create a parallelized function to add agents to the graph
-def add_agents_to_graph(agents):
-    with concurrent.futures.ThreadPoolExecutor() as executor:
-        futures = [executor.submit(graph.add_node, agent) for agent in agents]
-        concurrent.futures.wait(futures)
-
-# Add agents to the graph in parallel
-add_agents_to_graph(agents)
+```bash
+.\.venv\Scripts\activate
 ```
-**Troubleshooting Common Issues**
 
-When building advanced conversational agents, you may encounter common issues such as:
+- **On macOS and Linux:**
 
-* **Debugging Tips**: Use Langgraph's built-in debugging tools to identify and resolve issues.
-* **Community Support Resources**: Leverage the Langgraph community and online resources to troubleshoot common issues.
+```bash
+source .venv/bin/activate
+```
 
-By following this comprehensive guide, you'll be well on your way to building advanced conversational agents using Langgraph. Remember to explore the Langgraph documentation and community resources for further guidance and support.
+Once the virtual environment is activated, you should see `(.venv)` preceding your terminal prompt. Now, upgrade `pip` and install the necessary packages:
+
+```bash
+python -m pip install --upgrade pip
+```
+
+Next, install Elyra:
+
+```bash
+pip install -r requirements.txt
+```
+
+Finally, create a new IPython kernel:
+
+```bash
+python -m ipykernel install --user --name langraph --display-name "Python 3.10 (Langraph)"
+```
+If you have something like this
+
+To start Jupyter Lab, run:
+
+```bash
+jupyter lab
+```
+
+
+
+
+
